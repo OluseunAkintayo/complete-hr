@@ -1,10 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import './index.css'
+import './styles.global.css';
+import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Login from './pages/Login/index.tsx';
+import Users from './pages/Users/index.tsx';
+import ProtectedRoute from './lib/ProtectedRoute.tsx';
+
+const router = createBrowserRouter([
+  {
+    path: '/auth/login',
+    element: <Login />
+  },
+  {
+    path: '/dashboard',
+    element: <ProtectedRoute><Outlet /></ProtectedRoute>,
+    children: [
+      {
+        path: 'users',
+        element: <Users />
+      }
+    ]
+  }
+]);
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
