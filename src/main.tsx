@@ -9,6 +9,10 @@ import ProtectedRoute from './lib/ProtectedRoute.tsx';
 
 const router = createBrowserRouter([
   {
+    path: '/',
+    element: <Login />
+  },
+  {
     path: '/auth/login',
     element: <Login />
   },

@@ -32,7 +32,7 @@ const Login = () => {
 
   const login = (data: LoginProps) => {
     setIsLoading(true);
-    console.log({ data });
+		console.log(data.email);
 		setTimeout(() => {
 			reset();
 			setIsLoading(false);
@@ -42,9 +42,9 @@ const Login = () => {
   return (
     <div className="h-screen grid place-content-center">
       <Card className="w-[350px]">
-        <form onSubmit={handleSubmit(login)}>
+        <form onSubmit={handleSubmit(login)} autoComplete="off">
           <CardHeader>
-            <CardTitle>Login</CardTitle>
+            <CardTitle className="text-3xl">Login</CardTitle>
             <CardDescription>
               Enter username and password to continue.
             </CardDescription>
