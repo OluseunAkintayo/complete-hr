@@ -21,39 +21,39 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Leave = () => {
   return (
-    <Card style={{ height: "calc(100vh - 320px)", overflowY: "auto" }}>
+    <Card>
       <CardHeader>
         <CardTitle>Leave Management</CardTitle>
         <CardDescription>It's time to take some deserved rest.</CardDescription>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="annual" className="w-full flex items-start gap-4">
-          <TabsList className="flex flex-col items-start justify-start w-[240px] h-full space-y-2 p-3">
-            <TabsTrigger value="annual" className="justify-start w-full">
+        <Tabs defaultValue="annual" className="w-full flex flex-col md:flex-row items-start gap-4">
+          <TabsList className="w-full grid grid-cols-1 md:flex md:flex-col md:items-start md:justify-start md:w-[240px] h-full space-y-2 p-3">
+            <TabsTrigger value="annual" className="md:justify-start w-full">
               Annual Leave
             </TabsTrigger>
-            <TabsTrigger value="study" className="justify-start w-full">
+            <TabsTrigger value="study" className="md:justify-start w-full">
               Study Leave
             </TabsTrigger>
-            <TabsTrigger value="sick" className="justify-start w-full">
+            <TabsTrigger value="sick" className="md:justify-start w-full">
               Sick Leave
             </TabsTrigger>
-            <TabsTrigger value="compassionate" className="justify-start w-full">
+            <TabsTrigger value="compassionate" className="md:justify-start w-full">
               Compassionate Leave
             </TabsTrigger>
           </TabsList>
           <TabsContent value="annual" className="mt-0 w-full">
-            <Card className="border-none p-0">
-              <CardHeader className="py-0">
+            <Card className="border-none p-0 shadow-none">
+              <CardHeader className="px-0 md:py-0">
                 <CardTitle>
-                  <div className="flex items-center justify-between">
+                  <div className="flex flex-col gap-3 mb-4 sm:flex-row sm:items-center sm:justify-between sm:mb-8">
                     <span>Annual Leave</span>
                     {/* <Button className="uppercase">Initiate Leave</Button> */}
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button>CREATE PLAN</Button>
                       </DialogTrigger>
-                      <DialogContent className="">
+                      <DialogContent className="max-w-[96%] sm:max-w-[600px]">
                         <DialogHeader className="pt-4">
                           <DialogTitle>New Leave Plan</DialogTitle>
                           <DialogDescription>
@@ -80,7 +80,7 @@ const Leave = () => {
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="leave_notes">End Date</Label>
-                            <Input id="leave_notes" type="file" accept="" />
+                            <Input id="leave_notes" type="file" accept=".pdf, .doc, .docx" />
                           </div>
                           <Button type="submit" className="w-full">
                             Save
@@ -91,12 +91,12 @@ const Leave = () => {
                   </div>
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
-                <div className="flex gap-8">
+              <CardContent className="space-y-2 px-0">
+                <div className="grid gap-2 sm:flex sm:gap-8">
                   <p>Entitled: 28</p>
-                  <span>|</span>
+                  <span className="hidden sm:block">|</span>
                   <p>Used: 16</p>
-                  <span>|</span>
+                  <span className="hidden sm:block">|</span>
                   <p>Days Left: 12</p>
                 </div>
                 <div className="mt-8">
@@ -114,9 +114,9 @@ const Leave = () => {
                           <span>Date: 17 December 2023 - 31 December 2023</span>
                         </div>
                       </div>
-                      <div className="space-x-4 mt-4">
-                        <Button className="w-24">Edit</Button>
-                        <Button variant="destructive" className="w-24">
+                      <div className="space-x-2 sm:space-x-4 mt-4">
+                        <Button className="w-24 h-auto">Edit</Button>
+                        <Button variant="destructive" className="w-24 h-auto">
                           Delete
                         </Button>
                       </div>
@@ -131,9 +131,9 @@ const Leave = () => {
                           <span>Date: 17 December 2023 - 31 December 2023</span>
                         </div>
                       </div>
-                      <div className="space-x-4 mt-4">
-                        <Button className="w-24">Edit</Button>
-                        <Button variant="destructive" className="w-24">
+                      <div className="space-x-2 sm:space-x-4 mt-4">
+                        <Button className="w-24 h-auto">Edit</Button>
+                        <Button variant="destructive" className="w-24 h-auto">
                           Delete
                         </Button>
                       </div>

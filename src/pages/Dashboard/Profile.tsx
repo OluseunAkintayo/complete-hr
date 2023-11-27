@@ -10,7 +10,7 @@ export default function Profile() {
   return (
     <Card>
       <CardHeader>
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col md:items-center gap-4 md:flex-row">
           <Avatar className="w-20 h-20">
             {/* <AvatarImage src="https://github.com/shadcn.png" /> */}
             <AvatarFallback className="font-semibold text-2xl">AN</AvatarFallback>
