@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './styles.global.css';
-import { Outlet, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Login from './pages/Login/index.tsx';
 import Users from './pages/Users/index.tsx';
-import ProtectedRoute from './lib/ProtectedRoute.tsx';
+import Dashboard from './pages/Dashboard/index.tsx';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/dashboard',
-    element: <ProtectedRoute><Outlet /></ProtectedRoute>,
+    element: <Dashboard />,
     children: [
       {
         path: 'users',
