@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Fragment } from "react";
 import Profile from "./Profile";
 import Topbar from "./TopBar";
 import UserTabs from "./Tabs";
 
 const Dashboard = () => {
+
   return (
     <Fragment>
       <Topbar />

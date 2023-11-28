@@ -1,11 +1,11 @@
 import * as yup from 'yup';
 
 export const loginSchema = yup.object().shape({
-  email: yup.string().email().required(),
+  username: yup.string().required(),
   passcode: yup.string().min(8).max(32).required(),
 });
 
 export interface LoginProps {
-	email: string;
+	username: string;
 	passcode: string;
 }
