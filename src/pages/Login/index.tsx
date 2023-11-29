@@ -31,13 +31,34 @@ const Login = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(loginSchema) });
 
+  const getProfile = async (username: string, token: string) => {
+    const config = {
+      method: "GET",
+      url: "employees/" + username,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    try {
+      const response = await axios.request(config);
+      return response;
+      // console.log(response);
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        console.log(error);
+        return error;
+      }
+    }
+  };
+
   const login = async (data: LoginProps) => {
     setIsLoading(true);
     setError(null);
     const config = {
       method: "POST",
       url: "employees/login",
-      header: {
+      headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
       data: `username=${data.username}&password=${data.passcode}`,
@@ -46,18 +67,21 @@ const Login = () => {
       const response: AxiosResponse = await axios.request(config);
       if (response.status === 200) {
         if (response.data.status) {
-          window.location.href = "/dashboard";
-          document.cookie = `access_token=${response.data.accessToken}`;
+          sessionStorage.setItem("auth_token", response.data.accessToken);
+          const profile = await getProfile(response.data.user.username, response.data.accessToken);
+          if(profile?.status === 200) {
+            if('data' in profile && 'user' in profile.data && profile.data.status === 1) {
+              localStorage.setItem('loggedInUser', JSON.stringify(profile.data.user));
+              window.location.href = "/dashboard";
+            }
+          }
         }
       }
-      console.log(response);
       setIsLoading(false);
     } catch (error) {
-      console.log(error);
       if (axios.isAxiosError(error)) {
-        if (error.response?.data.status === 0) {
+        if (!error.response?.data.status)
           setError("Username or password incorrect");
-        }
       } else {
         setError("An error occurred while logging in");
       }
