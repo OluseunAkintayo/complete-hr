@@ -7,6 +7,18 @@ export interface LoggedInUser {
 	email: string;
 	department: string;
 	supervisor?: string;
-	suboordinates?: string;
+	suboordinates?: [];
 	rank?: string;
+}
+
+export interface IEmployee {
+	firstName: string;
+	lastName: string;
+	username: string;
+	age: number;
+	isAdmin?: boolean;
+	email: string;
+	department: string;
+	supervisor?: string;
+	suboordinates?: [];
 }
