@@ -31,12 +31,12 @@ const Header = () => {
           <Button
             asChild
             className={`rounded-none pb-2 px-1 h-auto bg-transparent text-gray-700 hover:bg-transparent hover:border-b-2 hover:border-b-gray-900 ${
-              location.pathname === "/admin/dashboard/staff"
+              location.pathname === "/admin/dashboard/employees"
                 ? "border-b-2 border-b-gray-900"
                 : ""
             }`}
           >
-            <Link to="/admin/dashboard/staff">Employees</Link>
+            <Link to="/admin/dashboard/employees">Employees</Link>
           </Button>
           <Button
             asChild
