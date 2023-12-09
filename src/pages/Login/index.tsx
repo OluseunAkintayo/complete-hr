@@ -72,7 +72,8 @@ const Login = () => {
           if(profile?.status === 200) {
             if('data' in profile && 'user' in profile.data && profile.data.status === 1) {
               localStorage.setItem('loggedInUser', JSON.stringify(profile.data.user));
-              window.location.href = "/dashboard";
+              if(profile.data.user.isAdmin) window.location.href = "/admin/dashboard"
+              if(!profile.data.user.isAdmin) window.location.href = "/dashboard";
             }
           }
         }
@@ -88,6 +89,11 @@ const Login = () => {
       setIsLoading(false);
     }
   };
+
+  React.useEffect(() => {
+    sessionStorage.clear();
+    localStorage.clear();
+  }, []);
 
   return (
     <div className="h-screen grid place-content-center">
