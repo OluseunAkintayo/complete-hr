@@ -6,7 +6,7 @@ import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./pages/Login/index.tsx";
 import Users from "./pages/Users/index.tsx";
-import Dashboard from "./pages/Dashboard/index.tsx";
+// import Dashboard from "./pages/Dashboard/index.tsx";
 import axios from "axios";
 import Admin from "./pages/Dashboard/Admin/Home/index.tsx";
 import Employees from "./pages/Dashboard/Admin/Employees/index.tsx";
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Dashboard />,
+        element: <Login />,
       },
       {
         path: "auth/login",

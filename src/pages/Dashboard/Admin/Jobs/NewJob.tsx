@@ -284,7 +284,7 @@ const NewJob = ({ open, setOpen, refetch }: NewJobProps) => {
                   defaultValue={dayjs().format("YYYY-MM-DD")}
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="block">Job Status</FormLabel>
+                      <FormLabel className="block">Closing Date</FormLabel>
                       <Popover>
                         <PopoverTrigger asChild>
                           <FormControl>

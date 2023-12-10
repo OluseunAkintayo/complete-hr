@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Header from "../../Header";
-import EmployeeCard from "./EmployeeCard";
-import ApplicationsCard from "./ApplicationsCard";
+import EmployeeCard from "./Cards/EmployeeCard";
+import ApplicationsCard from "./Cards/ApplicationsCard";
 
 const Admin = () => {
 	return (
