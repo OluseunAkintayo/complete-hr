@@ -7,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { IJob } from "@/utils/types";
+import { IJob } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 
 interface ListProps {

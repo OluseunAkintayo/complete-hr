@@ -6,10 +6,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { IApplication } from "@/utils/types";
 import ViewApplication from "./ViewApplication";
 import React from "react";
 import dayjs from "dayjs";
+import { IApplication } from "@/lib/types";
 
 interface ListProps {
   applications: IApplication[];
