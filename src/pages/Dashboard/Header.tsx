@@ -94,7 +94,7 @@ const Header = () => {
               <DropdownMenuSeparator />
               <DropdownMenuItem className="cursor-pointer">Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="text-red-500 cursor-pointer hover:text-red-600" onClick={logout}>
+              <DropdownMenuItem className="text-red-500 cursor-pointer" onClick={logout}>
                 Log out
               </DropdownMenuItem>
             </DropdownMenuContent>
