@@ -44,7 +44,7 @@ const List = ({ employees, search }: ListProps) => {
             }
           })
           .map((employee, i) => (
-            <TableRow key={employee.firstName + employee.lastName + i}>
+            <TableRow key={employee.firstName + employee.lastName + i.toString()}>
               <TableCell className="font-light uppercase">
                 {employee.username}
               </TableCell>

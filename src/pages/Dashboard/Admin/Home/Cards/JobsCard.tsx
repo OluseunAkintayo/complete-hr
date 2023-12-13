@@ -53,15 +53,17 @@ const JobsCard = () => {
         !isLoading &&
         jobs &&
         jobs.jobs && (
-          <CardHeader className="space-y-4 relative">
+          <CardHeader className="space-y-4 relative p-4 sm:p-6">
             <CardTitle className="flex gap-2 items-center">
               <span className="text-4xl text-muted-foreground">
                 {Math.ceil(jobs.jobs.length * Math.random() * 20)}
               </span>
             </CardTitle>
-            <span className="flex gap-2 absolute right-4 sm:right-8 top-4">
+            <span className="flex gap-2 sm:absolute right-4 sm:right-8 top-4">
               <TrendingUp className="text-green-600" size={32} />
-              <span className="text-xs font-normal text-green-600">+{(Math.random() * 15).toFixed(2)}%</span>
+              <span className="text-xs font-normal text-green-600">
+                +{(Math.random() * 15).toFixed(2)}%
+              </span>
             </span>
             <CardDescription>Active Jobs</CardDescription>
           </CardHeader>

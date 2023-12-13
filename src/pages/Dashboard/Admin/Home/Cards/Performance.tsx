@@ -26,13 +26,13 @@ const Performance = () => {
           <Skeleton className="h-4 bg-gray-300" />
         </CardHeader>
       ) : (
-        <CardHeader className="space-y-4 relative">
+        <CardHeader className="space-y-4 relative p-4 sm:p-6">
           <CardTitle className="flex gap-2 items-center">
             <span className="text-4xl text-muted-foreground">
               {((Math.random() * 41) + 50).toFixed(2)}%
             </span>
           </CardTitle>
-          <span className="flex gap-2 absolute right-4 sm:right-8 top-4">
+          <span className="flex gap-2 sm:absolute right-4 sm:right-8 top-4">
             <TrendingUp className="text-green-600" size={32} />
             <span className="text-xs font-normal text-green-600">
               +{(Math.random() * 10).toFixed(2)}%

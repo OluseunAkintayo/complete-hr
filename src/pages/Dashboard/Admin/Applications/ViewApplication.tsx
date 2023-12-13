@@ -113,7 +113,7 @@ const ViewApplication = ({ application, open, setOpenApplication }: IViewApplica
                 </p>
               </div>
             </div>
-            <div className="mt-8 space-y-2 mb-8">
+            <div className="mt-8 space-y-2 mb-8 sm:w-1/2 w-full">
               <Label>Application Verdict</Label>
               <Select>
                 <SelectTrigger className="w-full">
